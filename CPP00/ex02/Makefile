@@ -1,6 +1,6 @@
 NAME	=	Bank
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 SRCS	=	Account.cpp tests.cpp
 #INCLUDE	=	Account.hpp
 OBJS	=	$(SRCS:%.cpp=%.o)
