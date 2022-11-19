@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:19:12 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/19 17:59:32 by stissera         ###   ########.fr       */
+/*   Updated: 2022/11/19 18:03:42 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,14 @@ int	main(int ac, char *av[])
 	std::string		remplace(av[3]);
 	std::string		line;
 	size_t		i;
-
-	if (ifile.is_open() == false){
+	if (!ifile.is_open()){
 		std::cout << "Cannot open file " << av[1] << std::endl;
 		return(2);
 	}
-	if (ofile.is_open() == false){
+	if (!ofile.is_open()){
 		std::cout << "Cannot create or modify the file \"" << av[1] << ".replace\"" << std::endl;
 		return(3);
 	}
-
 	while (std::getline(ifile, line)){
 		while (line.find(search, 0) < line.length()){
 			i = line.find(search);
