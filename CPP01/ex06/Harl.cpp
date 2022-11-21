@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 18:08:10 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/20 16:37:33 by stissera         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:57:27 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	Harl::error()
 
 int	switch_case(std::string level)
 {
-	std::string type[] {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string type[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
 		if 	(level == type[i])
@@ -50,7 +50,7 @@ int	switch_case(std::string level)
 
 void	Harl::Complain(std::string level)
 {
-	void	(Harl::*ptr[])(void) {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void	(Harl::*ptr[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	switch (switch_case(level))
 	{

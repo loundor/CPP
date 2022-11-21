@@ -8,11 +8,11 @@ RM		=	rm -rf
 
 all		:	$(NAME)
 
-##%.o: %.cpp
-##			$(COMPILE.c) $< $(WARNING) -o $@
+%.o: %.cpp
+			$(COMPILE.c) $< $(WARNING) -o $@
 
-$(NAME)	:	$(OBJS)
-			$(CC) $(FLAGS) $(OBJS) $(INCLUDE) -o $@
+$(NAME)	:	${OBJS}
+			${CC} ${FLAGS} ${OBJS} -o $@
 
 clean	:
 			$(RM) $(OBJS)

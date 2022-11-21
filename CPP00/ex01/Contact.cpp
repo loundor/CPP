@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:22:18 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/18 14:35:13 by stissera         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:48:21 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ bool	Contact::SetNumber()
 {
 		std::string str;
 	std::cout << "\033[0;36mEntrer the phone number: \033[0m";
-while (str.length() == 0 && std::getline(std::cin, str));
+	while (str.length() == 0 && std::getline(std::cin, str));
 	this->_number.assign(str);
 	return (true);
 }
@@ -69,7 +69,7 @@ bool	Contact::SetSecret()
 {
 	std::string str;
 	std::cout << "\033[0;35mEntrer his biggest secret?!: \033[0m";
-while (str.length() == 0 && std::getline(std::cin, str));
+	while (str.length() == 0 && std::getline(std::cin, str));
 	this->_secret.assign(str);
 	return (true);
 }

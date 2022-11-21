@@ -11,7 +11,7 @@ all		:	$(NAME)
 			$(COMPILE.c) $< $(WARNING) -o $@
 
 $(NAME)	:	$(OBJS)
-			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+			$(CC) $(FLAGS) $(OBJS) -o $@
 
 clean	:
 			$(RM) $(OBJS)

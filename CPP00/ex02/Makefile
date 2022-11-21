@@ -2,7 +2,6 @@ NAME	=	Bank
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 SRCS	=	Account.cpp tests.cpp
-#INCLUDE	=	Account.hpp
 OBJS	=	$(SRCS:%.cpp=%.o)
 RM		=	rm -rf
 
@@ -12,7 +11,7 @@ all		:	$(NAME)
 			$(COMPILE.c) $< $(WARNING) -o $@
 
 $(NAME)	:	$(OBJS)
-			$(CC) $(FLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean	:
 			$(RM) $(OBJS)

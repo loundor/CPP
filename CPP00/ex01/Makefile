@@ -12,7 +12,7 @@ all		:	$(NAME)
 			$(COMPILE.c) $< $(WARNING) -o $@
 
 $(NAME)	:	$(OBJS)
-			$(CC) $(FLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean	:
 			$(RM) $(OBJS)
