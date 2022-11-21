@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 16:56:07 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/21 11:06:25 by stissera         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:16:33 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,19 @@ Fixed::Fixed()
 	this->_nbr = 0;
 }
 
-Fixed::Fixed(Fixed *a)
-{
-	std::cout << "Copy constructor called" << std::endl;
-	this->setRawBits(a->getRawBits());
-}
-
 Fixed::Fixed(Fixed &a)
 {
-	std::cout << "Test call" << std::endl;
-	this->setRawBits(a.getRawBits());
+	std::cout << "Copy constructor called" << std::endl;
+	*this = a;
 }
 
+Fixed& Fixed:: operator=(Fixed const &cpy)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	
+	this->_nbr = cpy.getRawBits();
+	return (*this);
+}
 
 Fixed::~Fixed()
 {

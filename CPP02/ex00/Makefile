@@ -3,16 +3,16 @@ CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 SRCS	=	main.cpp Fixed.cpp
 INCLUDE	=	Fixed.hpp
-OBJS	=	$(SRCS:%.cpp=%.o)
+OBJS	=	$(SRCS:.cpp=.o)
 RM		=	rm -rf
 
 all		:	$(NAME)
 
-%.o: %.cpp
-			$(COMPILE.c) $< $(WARNING) -o $@
+##%.o: %.cpp
+##			$(COMPILE.c) $< $(WARNING) -o $@
 
 $(NAME)	:	$(OBJS)
-			$(CC) $(FLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+			$(CC) $(FLAGS) $(OBJS) $(INCLUDE) -o $@
 
 clean	:
 			$(RM) $(OBJS)
