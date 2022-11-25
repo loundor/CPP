@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 16:56:07 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/25 02:41:23 by stissera         ###   ########.fr       */
+/*   Updated: 2022/11/25 02:45:24 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,23 @@ Fixed::~Fixed()
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "SetRawBits called" << std::endl;
 	this->_nbr = raw;
 }
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return(this->_nbr);
 }
 
 Fixed::Fixed(const int exp)
 {
-	std::cout << "Constructor int called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->setRawBits(exp << this->_bit);
 }
 
 Fixed::Fixed(const float mantisse)
 {
-	std::cout << "Constructor float called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->setRawBits(roundf(mantisse * 256));
 }
 
