@@ -1,8 +1,8 @@
 NAME	=	Fixed
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
-SRCS	=	main.cpp Fixed.cpp
-INCLUDE	=	Fixed.hpp
+SRCS	=	main.cpp Fixed.cpp Point.cpp bsp.cpp
+INCLUDE	=	Fixed.hpp Point.hpp
 OBJS	=	$(SRCS:.cpp=.o)
 RM		=	rm -rf
 
