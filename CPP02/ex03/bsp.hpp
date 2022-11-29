@@ -6,12 +6,12 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:13:04 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/28 19:02:07 by stissera         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:45:06 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BSP_H
-#define BSP_H
+#ifndef BSP_HPP
+#define BSP_HPP
 
 #include <iostream>
 #include <cmath>
