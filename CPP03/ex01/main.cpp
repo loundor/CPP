@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 19:47:45 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/30 19:20:16 by stissera         ###   ########.fr       */
+/*   Created: 2022/11/30 13:42:28 by stissera          #+#    #+#             */
+/*   Updated: 2022/11/30 19:25:34 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
 #include <iostream>
 #include "./ClapTrap.hpp"
+#include "./ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int	main(void)
 {
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const& cpy);
+	ScavTrap a("HELLO");
 
-		ScavTrap& operator=(ScavTrap const& cpy);
-		~ScavTrap();
+	a.seeInfo();
 
-	private:
-
-};
-
-#endif
+	std::cout << "New ScavTrap by cpy" << std::endl;
+	ScavTrap b = a;
+	return (0);
+}

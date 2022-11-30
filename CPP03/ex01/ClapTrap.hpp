@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:32:32 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/29 19:45:24 by stissera         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:23:40 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class ClapTrap
 
 		void	seeInfo() const;
 
-	private:
+	protected:
 		std::string		_name;
 		int				_hit;
 		int				_energy;
