@@ -16,9 +16,18 @@
 #include "./ClapTrap.hpp"
 #include "./ScavTrap.hpp"
 
-class FragTrap : public ClapTrap, public ScavTrap
+class FragTrap : public ClapTrap
 {
-	
+	public:
+        FragTrap();
+        FragTrap(FragTrap const& cpy);
+        FragTrap(std::string name);
+        ~FragTrap();
+        FragTrap& operator=(FragTrap const& cpy);
+
+    private:
+        void    highFivesGuys(void);
+        void    setPoints(void);
 };
 
 #endif

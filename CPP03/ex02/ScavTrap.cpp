@@ -12,12 +12,6 @@
 
 #include "./ScavTrap.hpp"
 
-void	ScavTrap::_setScavTrap(int hit, int energy, int attack){
-	this->_hit = hit;
-	this-> _energy = energy;
-	this->_attack = attack;
-}
-
 ScavTrap::ScavTrap() : ClapTrap(), _guard(false) {
 	this->_setScavTrap(100, 50, 20);
 	std::cout << "Scavtrap without name!" << std::endl;
@@ -42,6 +36,12 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & cpy){
 
 ScavTrap::~ScavTrap(){
 	std::cout << "ScavTrap destructor called." << std::endl;
+}
+
+void	ScavTrap::_setScavTrap(int hit, int energy, int attack){
+	this->_hit = hit;
+	this-> _energy = energy;
+	this->_attack = attack;
 }
 
 void	ScavTrap::guardGate(){

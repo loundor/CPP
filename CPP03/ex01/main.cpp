@@ -17,10 +17,14 @@
 int	main(void)
 {
 	ScavTrap a("HELLO");
-
+	ScavTrap b;
 	a.seeInfo();
-
-	std::cout << "New ScavTrap by cpy" << std::endl;
-	ScavTrap b = a;
+	a.beRepaired(10);
+	std::cout << "New FragTrap by cpy" << std::endl;
+	b = a;
+	std::cout << "B: " << std::endl;
+	b.seeInfo();
+	b.guardGate();
+	b.guardGate();
 	return (0);
 }

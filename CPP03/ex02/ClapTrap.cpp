@@ -12,7 +12,7 @@
 
 #include "./ClapTrap.hpp"
 
-ClapTrap::~ClapTrap(){																				std::cout << "ClapTrap \033[0;36m" << this->_name << "\033[0m  is destructed!" << std::endl;}
+ClapTrap::~ClapTrap(){																				std::cout << "ClapTrap \033[0;36m" << this->_name << "\033[0m is destructed!" << std::endl;}
 ClapTrap::ClapTrap() : _hit(10), _energy(10), _attack(0){											std::cout << "ClapTrap without name are welcome in the matrix!" << std::endl;}
 ClapTrap::ClapTrap(std::string const& name): _name(name), _hit(10), _energy(10), _attack(0){		std::cout << "ClapTrap \033[0;36m" << this->_name << "\033[0m are welcome in the matrix!" << std::endl;}
 bool	ClapTrap::checkEnergy() const {																return (this->_energy > 0 ? true : false);}
