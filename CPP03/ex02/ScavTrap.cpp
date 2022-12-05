@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:48:29 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/01 16:29:24 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:04:30 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,14 @@ void	ScavTrap::guardGate(){
 		std::cout << _name << " start guardGate!" << std::endl;
 		_guard = true;
 	}
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (!this->checkEnergy())
+		return ((void)(std::cout << "Empty energy! Can't attack..." << std::endl));
+	if (!this->alive())
+		return ((void)(std::cout << this->_name << " is dead!" << std::endl));
+	std::cout << "ScavTrap \033[0;36m" << this->_name << "\033[0m attacks \033[0;33m" <<  target << "\033[0m, causing \033[1;31m" << this->_attack << "\033[0m points of damage!" << std::endl;
+	this->_energy--;
 }

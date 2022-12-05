@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:45:45 by stissera          #+#    #+#             */
-/*   Updated: 2022/11/29 19:46:17 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:16:01 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,10 @@ void    FragTrap::setPoints()
 
 FragTrap::~FragTrap()
 {
-    std::cout << "Give me high five ?! (destructor FragTrap)." << std::endl;
+    std::cout << "Destructor " << _name << "." << std::endl;
+}
+
+void    FragTrap::highFivesGuys()
+{
+    std::cout << "Give me high five ?!." << std::endl;
 }

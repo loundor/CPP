@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:42:28 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/01 16:31:24 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:18:42 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@
 
 int	main(void)
 {
+	std::cout << "---------------------------------" << std::endl;
 	FragTrap a("HELLO");
+	a.highFivesGuys();
+	std::cout << "---------------------------------" << std::endl;
 	FragTrap b;
-	a.seeInfo();
-	a.beRepaired(10);
-	std::cout << "New FragTrap by cpy" << std::endl;
 	b = a;
-	std::cout << "B: " << std::endl;
-	b.seeInfo();
+	a.highFivesGuys();
+	std::cout << "---------------------------------" << std::endl;
+	FragTrap c = a;
+	c.highFivesGuys();
+	std::cout << "---------------------------------" << std::endl;
 	return (0);
 }

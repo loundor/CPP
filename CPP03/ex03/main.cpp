@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:42:28 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/05 19:23:08 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:21:32 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@
 
 int	main(void)
 {
-	ScavTrap test("Scav");
-	test.seeInfo();
-
+	std::cout << "---------------------------------" << std::endl;
 	DiamondTrap a("Test String");
 	a.whoAmI();
 	a.seeInfo();
@@ -28,10 +26,22 @@ int	main(void)
 	a.attack("Babar");
 	a.seeInfo();
 
-	std::cout << std::endl << std::endl << "B:\n";
+	std::cout << "---------------------------------" << std::endl;
 	DiamondTrap b;
 	b = a;
 	b.whoAmI();
 	b.seeInfo();
+	std::cout << std::endl << "Ok we do an attack!" << std::endl;
+	b.attack("Babar");
+	b.seeInfo();
+
+	std::cout << "---------------------------------" << std::endl;
+	DiamondTrap c = a;
+	c.whoAmI();
+	c.seeInfo();
+	std::cout << std::endl << "Ok we do an attack!" << std::endl;
+	c.attack("Babar");
+	c.seeInfo();
+	std::cout << "---------------------------------" << std::endl;
 	return (0);
 }
