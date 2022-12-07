@@ -13,6 +13,7 @@
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 #include <iostream>
+#include "./Brain.hpp"
 
 class Animal
 {
@@ -21,10 +22,15 @@ class Animal
 		Animal(Animal const&);
 		virtual ~Animal();
 		virtual void makeSound() const;
+		virtual std::string getString(int) const;
+		virtual bool	setString(int, std::string const&) const;
 		Animal& operator=(Animal const&);
-		std::string getType() const;
+		virtual std::string getType() const;
 	protected:
 		std::string type;
+
+	private:
+		Brain *brain;
 };
 
 #endif

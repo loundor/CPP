@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:20:16 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/07 12:25:37 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:15:46 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Dog : public Animal
 		~Dog();
 		Dog& operator=(Dog const&);
 		void makeSound() const;
+		bool	setString(int, std::string const&) const;
+		std::string getString(int) const;
 
 	private:
 		Brain	*brain;	

@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:16:39 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/07 12:13:02 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:49:57 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,14 @@ std::string	Animal::getType() const
 void 	Animal::makeSound() const
 {
 	std::cout << "Chuuttttt!!! It's Animal" << std::endl; 
+}
+
+std::string Animal::getString(int i) const
+{
+	return (this->brain->getString(i));
+}
+
+bool	Animal::setString(int i, std::string const& str) const
+{
+	return(this->brain->setString(i, str));
 }

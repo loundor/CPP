@@ -22,10 +22,10 @@ class Brain
 		Brain(Brain const*);
 		Brain&	operator=(Brain const&);
 		~Brain();
+		std::string	getString(int) const;
+		bool	setString(int, std::string const&);
 
 	private:
-
-	protected:
 		std::string ideas[100];
 };
 

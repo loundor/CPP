@@ -46,3 +46,20 @@ Brain::~Brain()
 {
 	std::cout << "Brain destructor called." << std::endl;
 }
+
+std::string Brain::getString(int i) const
+{
+	return (this->ideas[i]);
+}
+
+bool	Brain::setString(int i, std::string const& str)
+{
+	if (i >= 0 && i <= 99 && !str.empty())
+		this->ideas[i] = str;
+	else
+	{
+		std::cout << "Id must between 0 and 99.." << std::endl;
+		return (false);
+	}
+	return (true);
+}

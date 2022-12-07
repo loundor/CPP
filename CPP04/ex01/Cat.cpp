@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:29:46 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/07 14:08:43 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:19:50 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,14 @@ Cat&	Cat::operator=(Cat const& cpy)
 void	Cat::makeSound() const
 {
 	std::cout << "Miaouuuu say " << this->type << "!" << std::endl;
+}
+
+std::string Cat::getString(int i) const
+{
+	return (this->brain->getString(i));
+}
+
+bool	Cat::setString(int i, std::string const& str) const
+{
+	return(this->brain->setString(i, str));
 }
