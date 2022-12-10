@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "./Ice.hpp"
+#include "./ICharacter.hpp"
 
 Ice::Ice() : AMateria("ice")
 {
@@ -18,7 +19,9 @@ Ice::Ice() : AMateria("ice")
 }
 
 Ice::Ice(std::string const& type) : AMateria(type)
-{}
+{
+	std::cout << "Constructor ice by type called." << std::endl;
+}
 
 Ice::Ice(Ice const& cpy)
 {
@@ -29,7 +32,7 @@ Ice::Ice(Ice const& cpy)
 Ice& Ice::operator=(Ice const& cpy)
 {
 	std::cout << "Operator = Ice called." << std::endl;
-	this->type = cpy.this;
+	this->type = cpy.getType();
 	return (*this);
 }
 
@@ -41,7 +44,7 @@ Ice::~Ice()
 AMateria* Ice::clone() const
 {
 	std::cout << "Clone of Ice.." << std::endl;
-	AMateria const *ret = new Ice(this);
+	AMateria *ret = new Ice(getType());
 	return (ret);
 }
 

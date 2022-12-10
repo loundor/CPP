@@ -23,14 +23,15 @@ AMateria::AMateria(std::string const& type)
 	std::cout << "Constructor of AMateria with type called." << std::endl;
 }
 
-AMateria::AMateria(AMateria const& cpy) : type(cpy.type)
+AMateria::AMateria(AMateria const& cpy)
 {
+	this->type = cpy.getType();
 	std::cout << "Constructor of AMateria by copy called." << std::endl;
 }
 
 AMateria& AMateria::operator=(AMateria const& cpy)
 {
-	this->type = cpy.type;
+	this->type = cpy.getType();
 	std::cout << "Operator = called." << std::endl;
 	return (*this);
 }
@@ -42,10 +43,11 @@ AMateria::~AMateria()
 
 std::string const& AMateria::getType() const
 {
-	return (this->type); // Maybe need passed in const
+	return (this->type);
 }
 
 void AMateria::use(ICharacter& target)
 {
-	
+	(void)target;
+	std::cout << "Nothing to see here!" << std::endl;
 }

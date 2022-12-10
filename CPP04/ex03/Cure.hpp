@@ -13,18 +13,17 @@
 #ifndef CURE_HPP
 #define CURE_HPP
 #include "./AMateria.hpp"
-#include <iostream>
 
 class Cure : public AMateria
 {
 	public:
 		Cure();
-		//Cure(std::string const&);
+		Cure(std::string const&);
 		Cure(Cure const&);
 		Cure& operator=(Cure const&);
 		~Cure();
-		AMateria* clone() const;
-		void use(ICharacter&);
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter&);
 };
 
 #endif

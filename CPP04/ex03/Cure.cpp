@@ -11,20 +11,22 @@
 /* ************************************************************************** */
 
 #include "./Cure.hpp"
+#include "./ICharacter.hpp"
 
 Cure::Cure() : AMateria("cure")
 {
 	std::cout << "Constructor cure called." << std::endl;
 }
 
-Cure::Cure(Cure const& cpy)
+Cure::Cure(Cure const& cpy) : AMateria(type)
 {
-	Cure->type = cpy.type;
 	std::cout << "Constructor cure by copy called." << std::endl;
 }
 
-Cure::Cure(std::string const& cpy) : AMateria(type)
-{}
+Cure::Cure(std::string const& type) : AMateria(type)
+{
+	std::cout << "Constructor cure by type called." << std::endl;
+}
 
 Cure& Cure::operator=(Cure const& cpy)
 {
@@ -41,7 +43,7 @@ Cure::~Cure()
 AMateria*	Cure::clone() const
 {
 	std::cout << "Clone of Cure." << std::endl;
-	AMateria const *ret = new Cure(this);
+	AMateria *ret = new Cure(getType());
 	return (ret);
 }
 
