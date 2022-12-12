@@ -33,5 +33,11 @@ int	main( void )
 	man1.DownGrade(10);
 	man1.DownGrade(100);
 	std::cout << "n1: " << man1.getName() << " Level : " << man1.getGrade() << std::endl;
+
+	std::cout << "-------- OPERATOR << -------" << std::endl;
+	std::cout << man1 << std::endl;
+	std::cout << man2 << std::endl;
+	std::cout << man3 << std::endl;
+	std::cout << "----------------------------" << std::endl;
 	return (0);
 }
