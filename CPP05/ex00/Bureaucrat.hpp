@@ -20,6 +20,14 @@
 class Bureaucrat
 {
 	public:
+		class GradeTooHighException : public std::exception
+		{
+				const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+				const char* what() const throw();
+		};
 		Bureaucrat();
 		Bureaucrat(Bureaucrat const&);
 		Bureaucrat(std::string const&);
@@ -28,10 +36,8 @@ class Bureaucrat
 		~Bureaucrat();
 		std::string getName() const;
 		int			getGrade() const;
-		void		GradeTooHighException(); // Exception???
-		void		GradeTooLowException(); // Exception???!
-		void		UpGrade();
-		void		DownGrade();
+		void		UpGrade(int);
+		void		DownGrade(int);
 
 	private:
 		std::string	const	_name;
