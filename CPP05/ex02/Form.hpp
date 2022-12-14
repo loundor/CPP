@@ -24,10 +24,11 @@ class Form
 		bool				_signed;
 		int const			_signGrade;
 		int const			_execGrade;
+		bool				_fail;
 
 	public:
-		virtual Form(std::string const&, int const, int const);
-		virtual Form(Form const&);
+		Form(std::string const&, int const, int const);
+		Form(Form const&);
 		virtual ~Form();
 		virtual Form& operator=(Form const&);
 		class GradeTooHighException : public std::exception
@@ -42,13 +43,13 @@ class Form
 		{
 			const char* what() const throw();
 		};
-		void beSigned(Bureaucrat const&); // set _signed to true if can.
-		std::string	getName() const;
-		bool		getSign() const;
-		int			getSignGrade() const;
-		int			getExecGrade() const;
-		virtual void	beExecuted() const = 0;
-
+		void 				beSigned(Bureaucrat const&); // set _signed to true if can.
+		std::string			getName() const;
+		bool				getSign() const;
+		int					getSignGrade() const;
+		int					getExecGrade() const;
+		virtual void		execute(Bureaucrat const & executor) const = 0;
+		virtual std::string	getTarget() const = 0;
 };
 
 std::ostream& operator<<(std::ostream& os, Form const& form);

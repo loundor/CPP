@@ -12,21 +12,30 @@
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
+#include "./Bureaucrat.hpp"
 #include "./Form.hpp"
 
-class Form;
+//class Form;
+
+class Bureaucrat;
 
 class ShrubberyCreationForm : public Form
 {
 	public:
 		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string const&);
 		ShrubberyCreationForm(ShrubberyCreationForm const&);
+		ShrubberyCreationForm& operator=(ShrubberyCreationForm const &);
 		~ShrubberyCreationForm();
-		ShrubberyCreationForm& operator=(ShrubberyCreationForm const&);
+		class GradeTooLowException : public std::exception
+		{
+			const char* what() const throw();
+		};
+		std::string	getTarget() const;
+		void		execute(Bureaucrat const & executor) const;
 
-		void	execute(Bureaucrat const & executor) const;
 	private:
-
+		std::string	_target;
 };
 
 #endif

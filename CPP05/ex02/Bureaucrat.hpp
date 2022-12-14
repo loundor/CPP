@@ -31,6 +31,10 @@ class Bureaucrat
 		{
 				const char* what() const throw();
 		};
+		class NoSignException : public std::exception
+		{
+			const char* what() const throw();
+		};
 		Bureaucrat();
 		Bureaucrat(Bureaucrat const&);
 		Bureaucrat(std::string const&);
@@ -43,6 +47,7 @@ class Bureaucrat
 		void		UpGrade(int);
 		void		DownGrade(int);
 		void		signForm(Form&);
+		void		executeForm(Form const & form);
 
 	private:
 		std::string	const	_name;

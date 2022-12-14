@@ -100,14 +100,30 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Grade too low!");
 }
 
+const char*	Bureaucrat::NoSignException::what() const throw()
+{
+	return ("Form isn't signed!");
+}
+
 void	Bureaucrat::signForm(Form& form)
 {
-//	try
-//	{
 		form.beSigned(*this);
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
 }
+
+void	Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		if (!form.getSign())
+			throw NoSignException();
+		if (this->getGrade() > form.getExecGrade())
+			throw GradeTooLowException();
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << " can't execute the form." << std::endl;
+		return ;
+	}
+	form.execute(*this);
+	std::cout << this->getName() << " executed " << form.getName() << std::endl;
+ }
