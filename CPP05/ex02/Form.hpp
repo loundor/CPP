@@ -24,7 +24,6 @@ class Form
 		bool				_signed;
 		int const			_signGrade;
 		int const			_execGrade;
-		bool				_fail;
 
 	public:
 		Form(std::string const&, int const, int const);
@@ -43,7 +42,7 @@ class Form
 		{
 			const char* what() const throw();
 		};
-		void 				beSigned(Bureaucrat const&); // set _signed to true if can.
+		void 				beSigned(Bureaucrat const&);
 		std::string			getName() const;
 		bool				getSign() const;
 		int					getSignGrade() const;

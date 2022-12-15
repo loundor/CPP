@@ -34,6 +34,16 @@ Bureaucrat::Bureaucrat(std::string const& name) : _name(name), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string const& name, int const grade) : _name(name), _grade(grade)
 {
+	if (grade > 150)
+	{
+		_grade = 150;
+		throw Bureaucrat::GradeTooLowException();
+	}
+	if (grade < 1)
+	{
+		_grade = 1;
+		throw Bureaucrat::GradeTooHighException();
+	}
 	std::cout << "Bureaucrat constructor named " << name << " with grade " << grade << " called." << std::endl;
 }
 

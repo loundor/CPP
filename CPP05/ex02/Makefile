@@ -1,7 +1,7 @@
 NAME	=	28B
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow -g
-SRCS	=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp # RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS	=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 RM		=	rm -rf
 

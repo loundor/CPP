@@ -6,29 +6,27 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:12:54 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/14 22:39:58 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:18:46 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fstream>
+#include <ctime>
 #include "./Form.hpp"
 #include "./RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() : Form("NONAME", 145, 137), _target("NONAME")
 {
-	this->_fail = false;
 	std::cout << "Shrubbery constructor with NONAME called." << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const& name) : Form(name, 145, 137), _target(name)
 {
-	this->_fail = false;
 	std::cout << "Shrubbery constructor  " << name << " called." << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& cpy) : Form(cpy.getName(), cpy.getSignGrade(), cpy.getExecGrade()), _target(cpy._target)
 {
-	this->_fail = cpy._fail;
 	std::cout << "Shrubbery copy constructor called." << std::endl;
 }
 
@@ -50,14 +48,16 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& c
 
 void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
+	std::cout << "Brrrzzzzz. noize driller" << std::endl;
+	std::time_t	fail = std::time(nullptr);
 	try
 	{
-		if (_fail)
+		if (fail % 2)
 			throw FailRobotoException();
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << this->_target << e.what() << '\n';
 		return ;
 	}
 	std::cout << this->_target << " was correctly robotomise!" << std::endl;
@@ -70,10 +70,5 @@ const char*	RobotomyRequestForm::GradeTooLowException::what() const throw()
 
 const char*	RobotomyRequestForm::FailRobotoException::what() const throw()
 {
-	return ("Roboto transform failed!");
-}
-
-void	RobotomyRequestForm::beExecute()
-{
-	~_fail;
+	return (" robotomise transform failed!");
 }

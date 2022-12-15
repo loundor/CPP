@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:11:59 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/14 22:39:54 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:24:19 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,9 @@ class RobotomyRequestForm : public Form
 		};
 		std::string	getTarget() const;
 		void		execute(Bureaucrat const & executor) const;
-		void		beExecute();
 		
 	private:
 		std::string	_target;
-		bool		_fail;
 };
 
 #endif
