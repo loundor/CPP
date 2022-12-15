@@ -1,7 +1,7 @@
 NAME	=	coffee
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow -g
-SRCS	=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp intern.cpp
+SRCS	=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 RM		=	rm -rf
 

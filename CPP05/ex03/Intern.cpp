@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:09:56 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/15 17:45:48 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:56:44 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ Form*	makeForm(std::string const& type, std::string const& name)
 	std::string _type[3] = {	"schruberry creation",
 								"robotomy request",
 								"presidential pardon"};
-	Form*	(Form::*ptr[])() = {	&shruberryForm,
-									&robotoForm,
-									&presidentialForm};
+	Form*	(Intern::*ptr[])(std::string) = {	Intern::shruberryForm(name),
+											Intern::robotoForm(name),
+											Intern::presidentialForm(name)};
 	for (int i = 0; i < 3; i++)
 	{
 		if (type.compare(_type[i]))
