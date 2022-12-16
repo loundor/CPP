@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:08:24 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/15 17:55:52 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/16 10:33:19 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ class Intern
 	~Intern();
 	Intern& operator=(Intern const&);
 	Form* makeForm(std::string const&, std::string const&);
-	Form*	shruberryForm(std::string const&);
-	Form*	robotoForm(std::string const&);
-	Form*	presidentialForm(std::string const&);
-//	private:
-		
+
+	private:
+		static Form*	shruberryForm(std::string const&);
+		static Form*	robotoForm(std::string const&);
+		static Form*	presidentialForm(std::string const&);
 };
 
 #endif
