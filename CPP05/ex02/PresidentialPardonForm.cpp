@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:22:31 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/15 13:26:19 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/16 11:24:46 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("NONAME", 25, 5), _target("NONAME")
 {
-	std::cout << "Shrubbery constructor with NONAME called." << std::endl;
+	std::cout << "PresidentialPardonForm constructor with NONAME called." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const& name) : Form(name, 25, 5), _target(name)
 {
-	std::cout << "Shrubbery constructor  " << name << " called." << std::endl;
+	std::cout << "PresidentialPardonForm constructor  " << name << " called." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& cpy) : Form(cpy.getName(), cpy.getSignGrade(), cpy.getExecGrade()), _target(cpy._target)
 {
-	std::cout << "Shrubbery copy constructor called." << std::endl;
+	std::cout << "PresidentialPardonForm copy constructor called." << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "Shrubbery destructor " << this->getName() << " called." << std::endl;
+	std::cout << "PresidentialPardonForm destructor " << this->getName() << " called." << std::endl;
 }
 
 std::string	PresidentialPardonForm::getTarget() const

@@ -15,6 +15,7 @@
 #include "./ShrubberyCreationForm.hpp"
 #include "./RobotomyRequestForm.hpp"
 #include "./PresidentialPardonForm.hpp"
+#include "./Intern.hpp"
 
 int	main( void )
 {
@@ -22,15 +23,18 @@ int	main( void )
 	Bureaucrat man1("Thierry", 150);
 	Bureaucrat man2("Lucie", 143);
 	Bureaucrat man3("Marie", 5);
-	
+
 	std::cout << "n1: " << man1.getName() << " Level : " << man1.getGrade() << std::endl;
 	std::cout << "n2: " << man2.getName() << " Level : " << man2.getGrade() << std::endl;
 	std::cout << "n3: " << man3.getName() << " Level : " << man3.getGrade() << std::endl;
 
-	std::cout << "-------- CREATE FORMS -------" << std::endl;
-	Form *nbr1 = new ShrubberyCreationForm("Tree1");
-	Form *nbr2 = new RobotomyRequestForm("Roboture");
-	Form *nbr3 = new PresidentialPardonForm("Slartibartfast");
+	std::cout << "-------- INTERN -------" << std::endl;
+	Intern	stager;
+
+	std::cout << "-------- CREATE FORMS  BY INTERN -------" << std::endl;
+	Form *nbr1 = stager.makeForm("schruberry creation", "Tree1");
+	Form *nbr2 = stager.makeForm("robotomy request", "Roboture");
+	Form *nbr3 = stager.makeForm("presidential pardon", "Slartibartfast");
 
 	std::cout << "------ OPERATOR FORM -------" << std::endl;
 	std::cout << *nbr1 << std::endl;

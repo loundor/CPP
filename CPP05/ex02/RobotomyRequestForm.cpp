@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:12:54 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/15 13:18:46 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/16 11:24:30 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 #include "./Form.hpp"
 #include "./RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("NONAME", 145, 137), _target("NONAME")
+RobotomyRequestForm::RobotomyRequestForm() : Form("NONAME", 72, 45), _target("NONAME")
 {
-	std::cout << "Shrubbery constructor with NONAME called." << std::endl;
+	std::cout << "RobotomyRequestForm constructor with NONAME called." << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const& name) : Form(name, 145, 137), _target(name)
+RobotomyRequestForm::RobotomyRequestForm(std::string const& name) : Form(name, 72, 45), _target(name)
 {
-	std::cout << "Shrubbery constructor  " << name << " called." << std::endl;
+	std::cout << "RobotomyRequestForm constructor  " << name << " called." << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& cpy) : Form(cpy.getName(), cpy.getSignGrade(), cpy.getExecGrade()), _target(cpy._target)
 {
-	std::cout << "Shrubbery copy constructor called." << std::endl;
+	std::cout << "RobotomyRequestForm copy constructor called." << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "Shrubbery destructor " << this->getName() << " called." << std::endl;
+	std::cout << "RobotomyRequestForm destructor " << this->getName() << " called." << std::endl;
 }
 
 std::string	RobotomyRequestForm::getTarget() const

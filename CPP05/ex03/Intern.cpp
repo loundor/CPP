@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:09:56 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/16 10:38:17 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/16 11:21:01 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Intern::Intern()
 {
-	std::cout << "Intern constructor without name called." << std::endl;
+	std::cout << "Intern constructor called." << std::endl;
 }
 
 Intern::Intern(Intern const& cpy)
@@ -62,7 +62,7 @@ Form*	Intern::makeForm(std::string const& type, std::string const& name)
 											&presidentialForm};
 	for (int i = 0; i < 3; i++)
 	{
-		if (type.compare(_type[i]))
+		if (type == _type[i])
 		{
 			std::cout << "Intern creates " << type << " named " << name << std::endl;
 			return (ptr[i])(name);

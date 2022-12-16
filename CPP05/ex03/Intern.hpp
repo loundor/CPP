@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:08:24 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/16 10:33:19 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/16 11:14:29 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Intern
 	public:
 	Intern();
 	Intern(Intern const&);
-	Intern(std::string const&);
 	~Intern();
 	Intern& operator=(Intern const&);
 	Form* makeForm(std::string const&, std::string const&);
