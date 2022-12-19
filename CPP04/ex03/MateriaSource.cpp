@@ -28,13 +28,15 @@ MateriaSource::MateriaSource(MateriaSource const& cpy)
 	std::cout << "MateriaSource constructor by copy called." << std::endl;
 }
 
-MateriaSource& MateriaSource::operator=(AMateria const &)
+MateriaSource& MateriaSource::operator=(MateriaSource const & cpy)
 {
-	return (*this);
-}
-
-MateriaSource& MateriaSource::operator=(MateriaSource const &)
-{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->stock[i] != NULL)
+			delete this->stock[i];
+		this->stock[i] = cpy.stock[i]; 
+	}
+	std::cout << "MateriaSource operator = called." << std::endl;
 	return (*this);
 }
 
