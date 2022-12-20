@@ -45,8 +45,8 @@ void Convert::printAll() const
 	if (_isNumber)
 	{
 	 	std::cout << "int: " << static_cast<int>(this->_ld)  << std::endl;
-		std::cout << "float: " <<  static_cast<float>(this->_ld)  << ((static_cast<float>(this->_ld) == static_cast<int>(this->_ld)) ? ".0" : "") << "f" << std::endl;
-		std::cout << "double: " <<  static_cast<double>(this->_ld)  << ((static_cast<double>(this->_ld) == static_cast<int>(this->_ld)) ? ".0" : "") << std::endl;
+		std::cout << "float: " <<  static_cast<float>(this->_ld)  << ((static_cast<float>(this->_ld) - static_cast<int>(this->_ld) == 0) ? ".0" : "") << "f" << std::endl;
+		std::cout << "double: " <<  static_cast<double>(this->_ld)  << ((static_cast<double>(this->_ld) - static_cast<int>(this->_ld) == 0) ? ".0" : "") << std::endl;
 		return;
 	}
 	std::cout << "int: impossible" << std::endl;
