@@ -1,7 +1,7 @@
 NAME	=	convert
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow -g
-SRCS	=	convert.cpp
+SRCS	=	main.cpp Convert.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 RM		=	rm -rf
 

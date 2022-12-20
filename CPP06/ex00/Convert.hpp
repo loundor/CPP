@@ -13,10 +13,22 @@
 #ifndef CONVERT_HPP
 #define CONVERT_HPP
 #include <iostream>
+#include <sstream>
 
-void print_char(static_cast<char> str);
-void print_int(static_cast<int> nbr);
-void print_float(static_cast<float> real);
-void print_double(static_cast<double> real);
+class Convert
+{
+	private:
+		std::string	const	_str;
+		long double			_ld;
+		bool				_isNumber;
+		void	checkStr();
+
+	public:
+		Convert(std::string const&);
+		Convert(Convert const&);
+		~Convert();
+		Convert&	operator=(Convert const&);
+		void	printAll() const;
+};
 
 #endif
