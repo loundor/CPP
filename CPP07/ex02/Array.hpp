@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:47:23 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/22 17:38:45 by stissera         ###   ########.fr       */
+/*   Updated: 2022/12/22 23:56:43 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ template<class T> class Array
 	public:
 		Array();
 		Array(unsigned int);
-		Array(T const&);
+		Array(Array<T> const&);
 		~Array();
 
-		T&				operator=(T const &);
+		Array<T>&		operator=(Array<T> const &);
 		T&				operator[](unsigned int);
 		unsigned int	size() const;
 };
