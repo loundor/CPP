@@ -14,10 +14,9 @@
 
 int main( void )
 {
-	int	size = 3;
-	std::string tab[size] = {	"See",
+	std::string tab[3] = {	"See",
 								"my",
 								"list!"};
-	::iter(tab, size, test);
+	::iter(tab, 3, test);
 	return (0);
 }
