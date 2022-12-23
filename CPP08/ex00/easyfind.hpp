@@ -12,7 +12,12 @@
 
 #ifndef EASYFIND_HPP
 #define EASYFIND_HPP
+#include <iostream>
+#include <list>
+#include <algorithm>
+#include <vector>
 
+template<typename T> void easyfind(T&, int);
 
 #include "./easyfind.tpp"
 #endif
