@@ -36,6 +36,7 @@ int	main( void )
 	catch(std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
+		nbr4 = NULL;
 	}
 
 	std::cout << "------ OPERATOR FORM -------" << std::endl;
@@ -68,6 +69,5 @@ int	main( void )
 	std::cout << man3 << std::endl;
 	std::cout << "----------------------------" << std::endl;
 
-	delete nbr4;
 	return (0);
 }

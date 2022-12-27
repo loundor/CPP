@@ -53,5 +53,9 @@ int main( void )
 	}
 	std::cout << "Shortest difference: " << sp.shortestSpan() << std::endl;
 	std::cout << "Longest difference: " << sp.longestSpan() << std::endl;
+
+	Span sp2 = Span(2200);
+	sp2.rangeNumber(0, 1200);
+
 	return (0);
 }

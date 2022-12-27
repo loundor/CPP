@@ -30,6 +30,7 @@ class Span
 		int		shortestSpan();
 		int		longestSpan();
 		void	addRandom();
+		void	rangeNumber(std::list<int>::iterator, std::list<int>::iterator);
 		class maxNumberException : public std::exception
 		{
 			const char* what() const throw();

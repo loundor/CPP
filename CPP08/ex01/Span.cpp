@@ -40,6 +40,12 @@ void	Span::addRandom()
 		this->_n.push_back(rand() % 50000);
 }
 
+void	Span::rangeNumber(std::list<int>::iterator begin, std::list<int>::iterator end)
+{
+	for (; begin != end; ++begin)
+		*begin = (rand() % 50000);
+}
+
 int		Span::shortestSpan()
 {
 	if (this->_n.size() < 2)
