@@ -16,6 +16,8 @@
 int main( void )
 {
 	srand (time(NULL));
+
+	std::cout << "----- Test #1 -----" << std::endl;
 	Span sp = Span(2200);
 	
   	sp.addNumber(6);
@@ -54,8 +56,25 @@ int main( void )
 	std::cout << "Shortest difference: " << sp.shortestSpan() << std::endl;
 	std::cout << "Longest difference: " << sp.longestSpan() << std::endl;
 
-	Span sp2 = Span(2200);
-	sp2.rangeNumber(0, 1200);
+
+	std::cout << std::endl << "----- Test #2 -----" << std::endl;
+	Span sp2 = Span(10000);
+	std::list<int> itnbr(15000);
+	std::generate(itnbr.begin(), itnbr.end(), rand);
+	sp2.rangeNumber(itnbr.begin(), itnbr.end());
+
+	try
+	{
+		sp2.shortestSpan();
+		sp2.longestSpan();
+	}
+	catch (std::exception &e)
+	{ 
+		std::cout << e.what() << std::endl;
+		return (0);
+	}
+	std::cout << "Shortest difference: " << sp2.shortestSpan() << std::endl;
+	std::cout << "Longest difference: " << sp2.longestSpan() << std::endl;
 
 	return (0);
 }

@@ -37,13 +37,23 @@ void	Span::addNumber(int n)
 void	Span::addRandom()
 {
 	for (int i = this->_n.size(); i != _max; i++)
-		this->_n.push_back(rand() % 50000);
+		this->addNumber(rand());
 }
 
 void	Span::rangeNumber(std::list<int>::iterator begin, std::list<int>::iterator end)
 {
 	for (; begin != end; ++begin)
-		*begin = (rand() % 50000);
+	{
+	 	try
+		{
+			this->addNumber(*begin);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+			return ;
+		}
+	}
 }
 
 int		Span::shortestSpan()
