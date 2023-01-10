@@ -8,7 +8,7 @@ RM		=	rm -rf
 all		:	$(NAME)
 
 %.o: %.cpp
-			$(COMPILE.c) $< $(WARNING) -o $@
+			$(COMPILE.c) $(FLAGS) $< $(WARNING) -o $@
 
 $(NAME)	:	${OBJS}
 			${CC} ${FLAGS} ${OBJS} -o $@

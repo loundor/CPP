@@ -41,7 +41,11 @@ int main()
 		test2.push_back(5);
 		test2.push_back(737);
 		test2.push_back(0);
+		std::cout << "Test iterator:" << std::endl;
 		for (std::list<int>::iterator it=test2.begin(); it != test2.end(); ++it)
+			std::cout << *it << std::endl;
+		std::cout << "Test reverse_iterator:" << std::endl;
+		for (std::list<int>::reverse_iterator it=test2.rbegin(); it != test2.rend(); ++it)
 			std::cout << *it << std::endl;
 	}
     return(0);
