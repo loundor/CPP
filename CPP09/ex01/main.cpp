@@ -6,12 +6,11 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:24:52 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 23:36:46 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:28:37 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
-#include <iostream>
 
 int	main(int ac, char **av)
 {

@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:37:24 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 13:43:19 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:42:13 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int main(int ac, char** av)
 		}
 
 		std::string date(line, line.find_first_not_of(" \t\n\r\f\v"), line.find_first_of("|"));
+		date = date.substr(date.find_first_not_of(" "), date.find_last_not_of(" ") + 1);
 		if (ft::checkDate(date) == false)
 		{
 			std::cout << "Date not valid and ignored: \"" << date << "\"" << std::endl;

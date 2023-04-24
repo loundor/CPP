@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:37:32 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 13:40:56 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:49:01 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ BitcoinExchange::~BitcoinExchange(void) {}
 
 
 
-BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj)
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& cpy)
 {
-	if (this != &obj)
-		this->_exchangeRates = obj._exchangeRates;
+	if (this != &cpy)
+		this->_exchangeRates = cpy._exchangeRates;
 	return (*this);
 }
 
@@ -76,12 +76,18 @@ float BitcoinExchange::getExchangeRate(const std::string& date, float value) con
 			throw invalidArgument();
 		--it;
 	}
+	if (it->first.compare(date) == 0 && &it->first != &_exchangeRates.begin()->first)
+	{
+		while (it->first.compare(date) == 0 && &it->first != &_exchangeRates.begin()->first)
+			it--;
+		it++;
+	}
 	return (it->second);
 }
 
-std::ostream&	operator<<(std::ostream& out, const BitcoinExchange& i)
+std::ostream&	operator<<(std::ostream& out, const BitcoinExchange& ref)
 {
-	static_cast<void>(i);
+	static_cast<void>(ref);
 	return out;
 }
 

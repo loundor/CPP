@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 14:30:03 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 23:38:39 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:22:09 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 #include <iostream>
 #include <stdlib.h>
-#include <iomanip> //setprecision
-#include <sys/time.h> //gettimeofday
+#include <iomanip>
+#include <sys/time.h>
 #include <vector>
 #include <deque>
-#include <set> //to verify duplicates
 
 class PmergeMe
 {
@@ -28,57 +27,44 @@ class PmergeMe
 		PmergeMe(int, char **);
 		PmergeMe(const PmergeMe&);
 		~PmergeMe();
-
-		double	getVectorDeltaTime() const;
-		double	getDequeDeltaTime() const;
-
-		PmergeMe&	operator=(const PmergeMe&);
+		PmergeMe&			operator=(const PmergeMe&);
+		void				add(int, char **);
+		double				get_vector_time() const;
+		double				get_deque_time() const;
+		void				sort_all();
+		void				print_time(std::string) const;
+		void				print() const;
 
 	private:
-		int					_size;
-		bool				_sorted;
+		void				make_vector(char **);
+		void				make_deque(char **);
+		template <typename T>
+		void				sort(T&);
+		double				_get_time(void);
+		double				_deltaTime(long long);
 		std::vector<int>	_vector;
 		std::deque<int>		_deque;
-		double				_deltaTimeVector;
-		double				_deltaTimeDeque;
-
-		std::vector<int>	_parseArgsVector(int, char **);
-		std::deque<int>		_parseArgsDeque(int, char **);
-		void				_verifyDuplicates(void);
-		void				_printBeforeAfter(void);
-		void				_printTime(std::string) const;
-
-		template <typename T>
-		void				_mergeInsertSort(T&);
-		double				_getTime(void);
-		double				_deltaTime(long long);
+		int					_size;
+		bool				_sorted;
+		double				_time_vector;
+		double				_time_deque;
 
 	protected:
-
-		class invalidArgumentError : public std::exception
+		class invalid_argument : public std::exception
 		{
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("[Error]: invalid argument");
+					return ("Invalid argument");
 				}
 		};
 
-		class duplicatesError : public std::exception
+		class container_type : public std::exception
 		{
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("[Error]: can't duplicates");
-				}
-		};
-
-		class containerTypeError : public std::exception
-		{
-			public:
-				virtual const char* what() const throw()
-				{
-					return ("[Error]: not vector or deque");
+					return ("Not vector or deque");
 				}
 		};
 };

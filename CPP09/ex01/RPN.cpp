@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:26:21 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 23:36:59 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:52:43 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ long double	RPN::sum(long double first, long double second, char op)
 		case '*':
 			return (first * second);
 		case '/':
-			if (second == 0x0000000000000000)
+			if (second == 0x00)
 				throw divisionByZero();
 			return (first / second);
 	}

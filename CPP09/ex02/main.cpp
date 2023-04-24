@@ -6,23 +6,28 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 14:29:49 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 23:39:20 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:28:24 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-#include <iostream>
 
 int main(int ac, char **av)
 {
+	PmergeMe test;
 	if (ac < 2)
 	{
-		std::cout << "[Error]: no sequence provided" << std::endl;
+		std::cout << "Miss agruments" << std::endl;
 		return (1);
 	}
 	try
 	{
-		PmergeMe input(ac, av);
+		test.add(ac, av);
+		test.print();
+		test.sort_all();
+		test.print();
+		test.print_time("vector");
+		test.print_time("deque");
 	}
 	catch(const std::exception& e)
 	{
