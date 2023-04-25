@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:37:38 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 13:13:57 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/25 21:28:59 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,15 @@ class BitcoinExchange
 				virtual const char* what() const throw()
 				{
 					return ("Error: inexistent date.");
+				}
+		};
+
+		class invalidDate : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Error: invalid date.");
 				}
 		};
 };
