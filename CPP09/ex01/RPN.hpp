@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:26:58 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/23 23:36:47 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:53:36 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ class RPN
 		std::stack<long double> _stack;
 
 	protected:
-		class missNumber : public std::exception
+		class invalidOperation : public std::exception
 		{
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("[Error]: insufficient number");
+					return ("[Error]: Invalid operation");
 				}
 		};
 
@@ -49,15 +49,6 @@ class RPN
 				virtual const char* what() const throw()
 				{
 					return ("[Error]: invalid token");
-				}
-		};
-
-		class tooManyOperands : public std::exception
-		{
-			public:
-				virtual const char* what() const throw()
-				{
-					return ("[Error]: too many operands");
 				}
 		};
 

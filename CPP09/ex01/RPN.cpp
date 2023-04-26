@@ -6,7 +6,7 @@
 /*   By: stissera <stissera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:26:21 by stissera          #+#    #+#             */
-/*   Updated: 2023/04/24 13:52:43 by stissera         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:53:25 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void	RPN::reversePolishNotation(const std::string &av)
 {
 	for (std::size_t i = 0; i < av.length(); i++)
 	{
-		char c = av[i];
-		if (av[i] == 32)
+		std::string c = av.substr(i, 1);
+		if (!c.compare(" "))
 			continue;
-		else if (av[i] > 47 && av[i] < 58)
-			_stack.push(std::strtold(&av[i], NULL));
-		else if (is_ope(c))
+		else if (std::isdigit(static_cast<unsigned char>(c[0])))
+			_stack.push(std::atoi(c.c_str()));
+		else if (is_ope(*c.c_str()))
 		{
 			if (_stack.size() < 2)
-				throw missNumber();
+				throw invalidOperation();
 			long double second = _stack.top();
 			_stack.pop();
 			long double first = _stack.top();
@@ -48,7 +48,7 @@ void	RPN::reversePolishNotation(const std::string &av)
 			throw invalidToken();
 	}
 	if (_stack.size() != 1)
-		throw tooManyOperands();
+		throw invalidOperation();
 }
 
 long double	RPN::sum(long double first, long double second, char op)
